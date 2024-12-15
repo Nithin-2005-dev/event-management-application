@@ -15,8 +15,8 @@ const Dates = () => {
 {
  days.map((day)=>{
       return <div className='flex flex-col cursor-pointer hover:scale-110' onClick={()=>{
-        setEventForm(true)
         setSelectedDate(day);
+        setEventForm(true)
       }}>
       {format(new Date(),"yyyy-MM-dd")==format(day,"yyyy-MM-dd")? <p className='text-white p-2 m-2 bg-sky-300 rounded-full shadow-lg shadow-slate-500'>{format(day,"dd")}</p>: <p className='text-white p-2 m-2 bg-slate-500 rounded-full '>{format(day,"dd")}</p>}
       </div>
