@@ -13,7 +13,7 @@ import { EventProvider, EventsProvider } from '../store/EventsProvider'
 const EventForm = () => {
     const {deleteEvent,saveEvent,selectedEvent,setSelectedEvent,eveName,startTime,endTime,dec,eventForm,setEventForm,selectedDate,setSelectedDate}=useContext(EventsProvider)
     
-    
+   //to filter the events according to selected date 
     useEffect(()=>{
         const eventData=JSON.parse(localStorage.getItem("events")) || [];
         const current=eventData.filter((eve)=>{

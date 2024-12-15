@@ -1,13 +1,14 @@
-import CalanderView from "./blocks/CalanderView"
+import Dates from "./blocks/Dates"
 import Heading from "./blocks/Heading"
-import {EventProvider} from "./store/EventsProvider"
+import { EventProvider } from "./store/EventsProvider"
+
 
 const App = () => {
   return (
-   <div className="min-h-screen bg-background flex flex-col gap-y-10">
+   <div className="min-h-screen bg-background flex flex-col gap-y-10 w-screen justify-center items-center">
     <EventProvider>
    <Heading/>
-   <CalanderView/>
+   <Dates/>
    </EventProvider>
    </div>
   )
