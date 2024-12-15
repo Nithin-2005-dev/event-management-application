@@ -1,5 +1,6 @@
 import Dates from "./blocks/Dates"
 import Heading from "./blocks/Heading"
+import MonthEvents from "./blocks/MonthEvents"
 import { EventProvider } from "./store/EventsProvider"
 
 
@@ -9,6 +10,7 @@ const App = () => {
     <EventProvider>
    <Heading/>
    <Dates/>
+   <MonthEvents/>
    </EventProvider>
    </div>
   )

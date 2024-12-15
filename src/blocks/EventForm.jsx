@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
     Dialog,
     DialogContent,
@@ -24,6 +26,19 @@ const EventForm = () => {
     
   return (
     <div>
+    <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition: Bounce
+/>
       <Dialog open={eventForm} onOpenChange={setEventForm} >
   <DialogTrigger></DialogTrigger>
   <DialogContent className="bg-slate-950 rounded-lg border-gray-500">
@@ -47,7 +62,20 @@ const EventForm = () => {
       <label htmlFor="description">Description</label>
       <textarea className='bg-slate-800 rounded-lg p-1 my-1 font-normal' placeholder='enter description(optional)' ref={dec}/>
       </div>
-      <button className='bg-green-500 p-1 px-2 font-bold rounded-xl' onClick={saveEvent}>Save Event</button>
+      <button className='bg-green-500 p-1 px-2 font-bold rounded-xl' onClick={()=>{
+        saveEvent();
+        toast.success('Event added!', {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+transition: Bounce
+});
+      }}>Save Event</button>
       </div>
       <hr />
       <DialogDescription>
@@ -55,6 +83,7 @@ const EventForm = () => {
     {
     selectedEvent && selectedEvent.map((eve)=>{
             return <div className='bg-sky-100 p-2 m-2 rounded-lg '>
+            
             <h3 className='text-black font-bold'>{eve.eveName}</h3>
             <div className='flex justify-between'>
             <p className='text-gray-600 font-semibold'>start time:{eve.sTime}</p>
@@ -63,6 +92,17 @@ const EventForm = () => {
             <p className='m-2 text-start'>{eve.dec}</p>
             <button className='bg-red-600 text-white p-1 px-2 font-bold rounded-lg' onClick={()=>{
                 deleteEvent(eve.id);
+                toast.warn('Event deleted!', {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce
+});
             }}>Delete</button>
             </div>
         })
