@@ -1,6 +1,7 @@
 
 import { addDays, endOfMonth, format, startOfMonth } from 'date-fns';
 import { createContext, useRef, useState } from 'react';
+import { Bounce, toast } from 'react-toastify';
 export const EventsProvider= createContext([]);
 export const EventProvider=({children})=>{
     //to make the event form stateful 
@@ -39,12 +40,18 @@ export const EventProvider=({children})=>{
                           eTime:endTime.current?.value,
                           dec:dec.current?.value,
                       }
+                      if( eveName.current.value=="" ||
+                        startTime.current.value==""||
+                        endTime.current.value==""){
+                           return false;
+                        }
                       localStorage.setItem("events",JSON.stringify([...eventData,event]));
                       eveName.current.value=""
                       startTime.current.value=""
                       endTime.current.value=""
                       dec.current.value=""
                       setEventForm(false);
+                      return true;
                   }
                   //function to delete the eveent |get events from local storage->remove the clicked event by filter and save it to another array->send the new array to local storage
                   const deleteEvent=(id)=>{

@@ -22,7 +22,7 @@ const MonthEvents = () => {
   return (
     <div className='absolute top-0 right-0 p-2 m-2'>
     <Sheet>
-  <SheetTrigger className="text-white bg-sky-400 p-1 font-bold rounded-lg shadow-md shadow-black">Events</SheetTrigger>
+  <SheetTrigger className="text-white bg-sky-400 p-1 font-bold rounded-xl shadow-md shadow-black">Events</SheetTrigger>
   <SheetContent className="bg-transparent" >
     <SheetHeader>
       <SheetTitle className="text-white underline font-semibold">{format(currentMonth,"MMMM")} Events</SheetTitle>

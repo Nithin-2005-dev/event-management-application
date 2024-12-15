@@ -27,7 +27,7 @@ const Dates = () => {
     <div className='w-3/4  xl:w-[40vw] lg:w-1/2'>
     <CalanderView></CalanderView>
     <EventForm eventForm={eventForm} setEventForm={setEventForm} selectedDate={selectedDate}/>
-      <div className='grid grid-cols-7 gap-3 m-3  p-3 flex-wrap justify-center items-center rounded-xl shadow-xl shadow-black'>
+      <div className='grid grid-cols-7 gap-3  p-1 flex-wrap justify-center items-center rounded-xl shadow-xl shadow-black'>
     {
         daysInWords.map((ele)=>{
            return <p className='text-white p-2 m-2 rounded-full sm:text-base text-[10px]'>{ele}</p>

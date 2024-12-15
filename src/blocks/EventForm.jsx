@@ -63,7 +63,7 @@ transition: Bounce
       <textarea className='bg-slate-800 rounded-lg p-1 my-1 font-normal' placeholder='enter description(optional)' ref={dec}/>
       </div>
       <button className='bg-green-500 p-1 px-2 font-bold rounded-xl' onClick={()=>{
-        saveEvent();
+        saveEvent()?
         toast.success('Event added!', {
 position: "top-right",
 autoClose: 5000,
@@ -74,7 +74,17 @@ draggable: true,
 progress: undefined,
 theme: "colored",
 transition: Bounce
-});
+}):toast.error('Enter mandatory fields', {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+transition: Bounce
+})
       }}>Save Event</button>
       </div>
       <hr />
