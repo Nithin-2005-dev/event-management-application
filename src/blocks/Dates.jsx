@@ -4,9 +4,7 @@ import { format } from 'date-fns';
 import EventForm from './EventForm';
 
 const Dates = () => {
-    const [eventForm,setEventForm]=useState(false);
-    const {currentMonth,getDaysInMonth,changeMonth}=useContext(EventsProvider)
-    const [selectedDate,setSelectedDate]=useState(new Date());
+    const {currentMonth,getDaysInMonth,changeMonth,selectedDate,setSelectedDate,eventForm,setEventForm}=useContext(EventsProvider)
     const days=getDaysInMonth();
   return (
       <div className='w-3/4 gap-3 m-3  p-3 flex flex-wrap justify-center items-center rounded-xl shadow-xl shadow-black'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -8,46 +8,20 @@ import {
     DialogTrigger,
   } from "@/components/ui/dialog"
 import { format } from 'date-fns'
+import { EventProvider, EventsProvider } from '../store/EventsProvider'
   
-const EventForm = ({eventForm,setEventForm,selectedDate}) => {
-    const eveName=useRef();
-    const startTime=useRef();
-    const endTime=useRef();
-    const dec=useRef();
-    const [selectedEvent,setSelectedEvent]=useState([]);
+const EventForm = () => {
+    const {deleteEvent,saveEvent,selectedEvent,setSelectedEvent,eveName,startTime,endTime,dec,eventForm,setEventForm,selectedDate,setSelectedDate}=useContext(EventsProvider)
+    
+    
     useEffect(()=>{
         const eventData=JSON.parse(localStorage.getItem("events")) || [];
-        console.log(eventData);
         const current=eventData.filter((eve)=>{
             return eve.date==format(selectedDate,"yyyy-MM-dd");
         })
         setSelectedEvent(current);
     },[selectedDate])
-    const saveEvent=()=>{
-        const eventData=JSON.parse(localStorage.getItem("events")) || [];
-        const event={
-            id:eventData.length || 0,
-            date:format(selectedDate,"yyyy-MM-dd"),
-            eveName:eveName.current.value,
-            sTime:startTime.current.value,
-            eTime:endTime.current.value,
-            dec:dec.current.value,
-        }
-        localStorage.setItem("events",JSON.stringify([...eventData,event]));
-        eveName.current.value=""
-        startTime.current.value=""
-        endTime.current.value=""
-        dec.current.value=""
-        setEventForm(false);
-    }
-    const deleteEvent=(id)=>{
-        const eventData=JSON.parse(localStorage.getItem("events")) || [];
-        const current=eventData.filter((eve)=>{
-            return eve.id!=id;
-        })
-        localStorage.setItem("events",JSON.stringify([current]));
-        setEventForm(false);
-    }
+    
   return (
     <div>
       <Dialog open={eventForm} onOpenChange={setEventForm} >
