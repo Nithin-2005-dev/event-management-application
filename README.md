@@ -1,6 +1,6 @@
 # Event manager
 
-This application is to manager your events with user-friendly calender.
+This application is to manage your events with user-friendly calender.
 
 The link for the application is:
 
