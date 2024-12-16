@@ -6,13 +6,13 @@ import { EventProvider } from "./store/EventsProvider"
 
 const App = () => {
   return (
-   <div className="min-h-screen bg-background flex flex-col gap-y-10 w-screen justify-center items-center">
+   <main className="min-h-screen bg-background flex flex-col gap-y-10 w-screen justify-center items-center">
     <EventProvider>
    <Heading/>
    <Dates/>
    <MonthEvents/>
    </EventProvider>
-   </div>
+   </main>
   )
 }
 

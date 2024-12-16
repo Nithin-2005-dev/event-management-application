@@ -6,7 +6,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
 const CalanderView = () => {
   const {currentMonth,changeMonth}=useContext(EventsProvider)
   return (
-    <div className='flex flex-col justify-center items-center w-full'>
+    <section className='flex flex-col justify-center items-center w-full'>
     <div className='flex justify-between w-full'>
 <div className='text-orange-300 font-semibold text-xl'>{format(currentMonth,"MMMM")+"-"+format(currentMonth,"yyyy")}</div>
     <div className='text-white shadow-lg shadow-black rounded-full p-2 flex'>
@@ -18,7 +18,7 @@ const CalanderView = () => {
       }}><FaAngleRight /></button>
     </div>
     </div>
-    </div>
+    </section>
       
   )
 }

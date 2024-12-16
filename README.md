@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# Event manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is to manager your events with user-friendly calender.
 
-Currently, two official plugins are available:
+The link for the application is:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-https://event-calender98.netlify.app/
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuring app in local device
 
-- Configure the top-level `parserOptions` property like this:
+-git clone https://github.com/Nithin-2005-dev/event-management-application.git
+-cd event-management-application
+-npm i
 
+To install tailwind:
+-npm install -D tailwindcss postcss autoprefixer
+-npx tailwindcss init -p
+
+in tailwind.config.js
 ```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
   },
-})
+  plugins: [],
+}
 ```
+in index.css
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
+To install shadcn:
+
+https://ui.shadcn.com/docs/installation/vite
+
+follow the above steps
+
+To run the app:
+
+npm run dev
+
+
+#Libraries used:
+
+1)framer-motion -->for smooth layout transitions
+2)react-toastify -->to showing toasts
+3)export-from-json -->to export events data to local storage
+4)date-fns -->to format dates
+5)react-icons -->for iceons

@@ -11,7 +11,7 @@ import {
   } from "@/components/ui/dialog"
 import { format } from 'date-fns'
 import { EventProvider, EventsProvider } from '../store/EventsProvider'
-  
+  import {motion} from 'framer-motion'
 const EventForm = () => {
     const {deleteEvent,saveEvent,selectedEvent,setSelectedEvent,eveName,startTime,endTime,dec,eventForm,setEventForm,selectedDate,setSelectedDate}=useContext(EventsProvider)
     
@@ -25,7 +25,7 @@ const EventForm = () => {
     },[selectedDate])
     
   return (
-    <div>
+    <motion.section layout>
     <ToastContainer
 position="top-right"
 autoClose={5000}
@@ -123,7 +123,7 @@ transition: Bounce
   </DialogContent>
 </Dialog>
 
-    </div>
+    </motion.section>
   )
 }
 
