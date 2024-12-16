@@ -49,10 +49,14 @@ To run the app:
 npm run dev
 
 
-#Libraries used:
+## Libraries used:
 
 1)framer-motion -->for smooth layout transitions
+
 2)react-toastify -->to showing toasts
+
 3)export-from-json -->to export events data to local storage
+
 4)date-fns -->to format dates
+
 5)react-icons -->for iceons
