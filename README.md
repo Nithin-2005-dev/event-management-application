@@ -10,14 +10,17 @@ The link for the application is:
 ## Configuring app in local device
 
 -git clone https://github.com/Nithin-2005-dev/event-management-application.git
+
 -cd event-management-application
+
 -npm i
 
 To install tailwind:
 -npm install -D tailwindcss postcss autoprefixer
+
 -npx tailwindcss init -p
 
-in tailwind.config.js
+In tailwind.config.js
 ```js
 /** @type {import('tailwindcss').Config} */
 export default {
